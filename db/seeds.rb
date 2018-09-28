@@ -10,6 +10,9 @@ powers = [
 
 powers.each {|power| Power.create(power)}
 
+# test_power = Power.create(name: "Super Screwed power", description: "super screwed", heroine_id: 21)
+
+
 heroines = [
   {name: "Kamala Khan", super_name: "Ms. Marvel"},
   {name: "Doreen Green", super_name: "Squirrel Girl" },
@@ -31,6 +34,6 @@ heroines = [
 # (******Note****** If you try to do this before you set up proper associations, it will error.)
 # ---------------
 heroines = heroines.map { |heroine| heroine.merge( { power_id: Power.all.sample.id } ) }
-# ---------------
-
+# # ---------------
+#
 heroines.each { |heroine| Heroine.create(heroine) }
