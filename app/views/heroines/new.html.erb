@@ -1,0 +1,19 @@
+<h2>Create Heroine:</h2>
+<%= render 'errors' %>
+<%= form_for(@heroine) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :super_name %><br>
+    <%= f.text_field :super_name %>
+  </div>
+  <div class="field">
+    <%= f.label :powers %><br>
+    <%= f.collection_select :power_id, @powers, :id, :name %>
+  </div><br />
+  <div class="actions">
+    <%= f.submit "Create Heroine" %>
+  </div>
+<% end %>
