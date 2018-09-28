@@ -1,0 +1,12 @@
+<% content_for :title, @heroine.super_name %>
+
+<h1><%= @heroine.super_name %></h1>
+
+<h2>Real name: <%= @heroine.name %></h2>
+
+<h2>Power: <%= link_to @heroine.power_name, @heroine.power %> </h2>
+
+<br>
+
+<h3><%= link_to "See all heroines", heroines_path %></h3>
+<h3><%= link_to "Create a heroine", new_heroine_path %></h3>

@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  background: black;
+  height: 98%;
+}
+
+body {
+  width: 60%;
+  margin: auto;
+  height: 100%;
+  padding-left: 2em;
+  padding-top: 0.5em;
+  padding-right: 2em;
+  background: white;
+  font-family: 'Arial', Sans-Serif;
+}
+
+li {
+    text-align: left;
+    font-size: 1.1em;
+    list-style-position: inside;
+    line-height: 1.3em;
+}
+
+h1 {
+  color: rgb(237, 29, 36);
+  font-family: 'Impact', 'Arial', Sans-Serif;
+  font-size: 2.5em;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}

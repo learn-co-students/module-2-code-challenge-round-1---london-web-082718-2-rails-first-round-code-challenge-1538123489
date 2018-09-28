@@ -1,10 +1,36 @@
-<h2>All Heroines</h2>
+<% content_for :title, "All Heroines" %>
+
+<h1>All Heroines</h1>
+
+<h4>
+<%= form_tag("/heroines", method: "get") do %>
+  <%= label_tag(:q, "Search by superpower:") %>
+  <%= text_field_tag :q, nil, list: "powers", autocomplete: :off %>
+    <datalist id="powers">
+    <% @powers.each do |power| %>
+      <option value="<%=power.name%>">
+    <% end %>
+    </datalist>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+</h4>
+<% if @heroines.empty? %>
+  <h3>No heroines found with that power!</h3>
+<% end %>
 
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<% if @heroines != Heroine.all %>
+  <h3><%= link_to "Back to all heroines", heroines_path %></h3>
+<% end %>
+
+<h3><%= link_to "Create a new heroine", new_heroine_path %></h3>
