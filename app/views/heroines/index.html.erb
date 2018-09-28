@@ -3,8 +3,24 @@
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
+
+  <h3>Search for Heroine by Power:</h3>
+  <h3>Your options are:</h3>
+
+  <ul>
+    <% Power.all.each do |pw| %>
+      <li>  <%= pw.name %>  </li>
+    <% end %>
+  </ul><br>
+
+  <%= form_tag @heroine, :method => :get do %>
+  <%= text_field_tag :power_name %>
+  <%= submit_tag 'Filter' %>
+  <% end %>
+
+
 </ul>
