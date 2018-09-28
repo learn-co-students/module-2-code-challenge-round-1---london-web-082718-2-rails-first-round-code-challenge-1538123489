@@ -1,12 +1,10 @@
-<h2>All Superpowers</h2>
+<% content_for :title, 'All superpowers' %>
+
+<h1>All Superpowers</h1><br>
 
 <ul>
   <% @powers.each do |power| %>
-    <li>
-      <%= power.name %>
-      <br>
-      Description: <%= power.description %>
-    </li>
-    <br>
+    <h3><%= link_to power.name, power %></h3>
+    <h4><i><%= power.description %></i></h4><br>
   <% end %>
 </ul>
